@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Por Bella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://cdn.utmify.com.br">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;background:#f8f9fa;color:#2d3436;line-height:1.7;min-height:100vh;letter-spacing:-0.01em;padding-bottom:0}
+@media(max-width:767px){body{padding-bottom:120px}}
+
+.wrap{max-width:730px;margin:0 auto;background:#fff}
+@media(min-width:1024px){.wrap{max-width:920px}}
+@media(min-width:1280px){.wrap{max-width:1020px}}
+
+.top-bar{text-align:center;padding:1.5rem 1rem 1.2rem;background:#fff;border:none}
+@media(min-width:768px){.top-bar{padding:2rem 2rem 1.5rem}}
+
+.brand{width:180px;height:auto;margin:0 auto 0.8rem;display:block;opacity:.95}
+@media(min-width:640px){.brand{width:220px;margin:0 auto 1rem}}
+@media(min-width:768px){.brand{width:260px;margin:0 auto 1.2rem}}
+@media(min-width:1024px){.brand{width:240px}}
+@media(min-width:1280px){.brand{width:220px}}
+
+h1{font-size:1.35rem;font-weight:700;color:#1a1a1a;line-height:1.4;margin:0 auto;max-width:620px;letter-spacing:-0.02em}
+@media(min-width:640px){h1{font-size:1.55rem}}
+@media(min-width:768px){h1{font-size:1.75rem;font-weight:700}}
+
+.media-box{margin:0 auto 0.8rem;max-width:100%;padding:0 1.1rem}
+@media(min-width:640px){.media-box{padding:0 1.6rem}}
+@media(min-width:768px){.media-box{margin:0 auto 1.2rem;max-width:510px;padding:0}}
+@media(min-width:1024px){.media-box{max-width:460px}}
+@media(min-width:1280px){.media-box{max-width:430px}}
+
+.main-img{width:100%;height:auto;display:block;border-radius:8px;border:3px solid #e9ecef}
+
+.stats-area{padding:0.8rem 1rem 2rem;background:transparent;border:none}
+@media(min-width:768px){.stats-area{padding:1.2rem 2rem 2.5rem}}
+
+.stats-top{text-align:center;margin-bottom:1.25rem}
+
+.big-number{font-size:1.75rem;font-weight:800;color:#52c522;display:block;margin-bottom:.35rem}
+@media(min-width:640px){.big-number{font-size:2rem}}
+@media(min-width:768px){.big-number{font-size:2.25rem}}
+
+.sub-text{font-size:.8rem;font-weight:500;color:#666;display:block}
+@media(min-width:640px){.sub-text{font-size:.875rem}}
+
+.track-bar{position:relative;height:10px;background:#e9ecef;border-radius:12px;overflow:hidden;margin:1rem auto 0;max-width:650px}
+@media(min-width:640px){.track-bar{height:11px}}
+@media(min-width:768px){.track-bar{height:12px}}
+
+.track-fill{position:absolute;top:0;left:0;bottom:0;background:linear-gradient(90deg,#52c522,#3fa015);display:flex;align-items:center;justify-content:flex-end;padding:0;color:#fff;font-weight:700;font-size:.75rem;transition:width .8s ease;border-radius:12px}
+@media(min-width:640px){.track-fill{font-size:.8rem}}
+@media(min-width:768px){.track-fill{font-size:.85rem}}
+
+.text-area{max-width:640px;margin:0 auto;padding:1.6rem 1.1rem}
+@media(min-width:640px){.text-area{padding:2.1rem 1.6rem}}
+@media(min-width:768px){.text-area{padding:2.6rem 2.1rem}}
+
+.text-area p{font-size:1.02rem;line-height:1.75;color:#495057;margin-bottom:1.1rem;text-align:left;font-weight:400}
+@media(min-width:640px){.text-area p{font-size:1.06rem;line-height:1.8;margin-bottom:1.3rem}}
+@media(min-width:768px){.text-area p{font-size:1.1rem;line-height:1.85;margin-bottom:1.5rem}}
+
+.text-area p strong{color:#1a1a1a;font-weight:700}
+
+.action-btn{display:block;width:100%;max-width:400px;margin:1.75rem auto;padding:1.1rem 2rem;background:linear-gradient(135deg,#52c522,#3fa015);color:#fff;font-size:.98rem;font-weight:600;text-align:center;text-decoration:none;border-radius:50px;cursor:pointer;box-shadow:0 6px 24px rgba(82,197,34,.25);transition:all .3s cubic-bezier(.4,0,.2,1);border:none;text-transform:uppercase;letter-spacing:.8px}
+@media(min-width:640px){.action-btn{max-width:420px;padding:1.15rem 2.25rem;font-size:1.02rem}}
+@media(min-width:768px){.action-btn{font-size:1.05rem;padding:1.2rem 2.5rem;max-width:440px}}
+.action-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(82,197,34,.35);filter:brightness(1.05)}
+
+.img-box{margin:1.6rem auto;max-width:100%;padding:0 1.1rem}
+@media(min-width:640px){.img-box{margin:2.1rem auto;padding:0 1.6rem}}
+@media(min-width:768px){.img-box{max-width:510px;padding:0}}
+@media(min-width:1024px){.img-box{max-width:460px}}
+@media(min-width:1280px){.img-box{max-width:430px}}
+
+.img-item{width:100%;height:auto;display:block;border-radius:8px;border:3px solid #e9ecef}
+
+.choice-area{background:#fff;padding:2.25rem 1rem;border-top:1px solid #dee2e6;border-bottom:1px solid #dee2e6}
+@media(min-width:640px){.choice-area{padding:2.75rem 1.5rem}}
+@media(min-width:768px){.choice-area{padding:3.25rem 2rem}}
+
+.area-title{text-align:center;font-size:1.32rem;font-weight:600;color:#1a1a1a;margin-bottom:.6rem;letter-spacing:-0.02em}
+@media(min-width:640px){.area-title{font-size:1.48rem}}
+@media(min-width:768px){.area-title{font-size:1.62rem}}
+
+.area-subtitle{text-align:center;color:#666;font-size:.875rem;margin-bottom:1.75rem;font-weight:500}
+@media(min-width:640px){.area-subtitle{margin-bottom:2rem}}
+
+.option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;max-width:520px;margin:0 auto}
+@media(min-width:480px){.option-grid{gap:.9rem}}
+@media(min-width:640px){.option-grid{gap:1.05rem}}
+@media(min-width:1024px){.option-grid{max-width:100%}}
+
+.option-btn{display:flex;align-items:center;justify-content:center;padding:1rem .8rem;background:linear-gradient(135deg,#52c522,#47b31d);color:#fff;font-size:1.15rem;font-weight:700;text-decoration:none;border-radius:10px;cursor:pointer;border:2px solid transparent;transition:all .25s ease;letter-spacing:-0.02em;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(82,197,34,.25)}
+@media(min-width:480px){.option-btn{padding:1.05rem .9rem;font-size:1.18rem}}
+@media(min-width:640px){.option-btn{padding:1.1rem 1rem;font-size:1.22rem}}
+@media(min-width:768px){.option-btn{padding:1.15rem 1rem;font-size:1.26rem}}
+.option-btn:hover{transform:translateY(-3px) scale(1.02);background:linear-gradient(135deg,#47b31d,#3fa015);box-shadow:0 4px 16px rgba(82,197,34,.35);border-color:transparent}
+.option-btn:active{transform:translateY(-1px) scale(1)}
+.option-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+
+.comments-area{max-width:100%;margin:0 auto;padding:0;background:transparent}
+
+.comments-title{font-size:1.2rem;font-weight:600;color:#1a1a1a;margin-bottom:0.8rem;text-align:center}
+@media(min-width:640px){.comments-title{font-size:1.3rem}}
+
+.fb-comment{display:flex;gap:0.7rem;margin-bottom:1rem;padding:0.9rem;background:#fff;border:1px solid #e8e8e8;border-radius:12px;max-width:100%;overflow:visible;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:all .2s ease}
+@media(min-width:768px){.fb-comment{gap:0.8rem;margin-bottom:1.1rem;padding:1rem}}
+.fb-comment:hover{border-color:#52c522;box-shadow:0 2px 8px rgba(82,197,34,0.12)}
+
+.fb-avatar{width:36px;height:36px;border-radius:10px;object-fit:cover;flex-shrink:0;border:2px solid #f0f0f0}
+@media(min-width:768px){.fb-avatar{width:42px;height:42px}}
+
+.fb-body{flex:1;min-width:0;overflow:visible}
+.fb-name{font-size:0.85rem;font-weight:700;color:#2d3436;margin-bottom:0.25rem;line-height:1.2;cursor:pointer}
+.fb-name:hover{color:#52c522}
+@media(min-width:768px){.fb-name{font-size:0.9rem}}
+
+.fb-text{font-size:0.85rem;line-height:1.5;color:#4a4a4a;margin-bottom:0.4rem;word-wrap:break-word;background:transparent;padding:0;border-radius:0;display:block;max-width:100%}
+@media(min-width:768px){.fb-text{font-size:0.9rem}}
+
+.fb-actions{display:flex;align-items:center;gap:0.6rem;font-size:0.7rem;padding-left:0}
+.fb-action{color:#52c522;font-weight:600;cursor:pointer;transition:color 0.15s;user-select:none;text-transform:uppercase;letter-spacing:0.3px}
+.fb-action:hover{color:#3fa015}
+.fb-action.active{color:#3fa015}
+.fb-time{color:#999;font-size:0.7rem;font-weight:500}
+
+.bottom-bar{background:#fafafa;padding:2.5rem 1rem 2rem;text-align:center;border:none}
+@media(min-width:640px){.bottom-bar{padding:3rem 1.5rem 2.5rem}}
+@media(min-width:768px){.bottom-bar{padding:3.5rem 2rem 3rem}}
+
+.bottom-brand{width:130px;height:auto;opacity:.85;margin-bottom:1.5rem}
+@media(min-width:640px){.bottom-brand{width:150px;margin-bottom:1.8rem}}
+@media(min-width:768px){.bottom-brand{width:160px}}
+
+.bottom-info{font-size:.85rem;color:#666;line-height:1.6;margin-bottom:1.25rem}
+.bottom-nav{display:flex;gap:1.5rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:1.5rem;padding:0;border:none}
+@media(min-width:640px){.bottom-nav{gap:2rem}}
+
+.bottom-link{color:#888;text-decoration:none;font-weight:500;transition:color .2s ease;font-size:.8rem}
+@media(min-width:640px){.bottom-link{font-size:.85rem}}
+.bottom-link:hover{color:#52c522}
+
+.bottom-legal{font-size:.75rem;color:#aaa;font-weight:400}
+@media(min-width:640px){.bottom-legal{font-size:.8rem}}
+
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:10000;padding:0.8rem;backdrop-filter:blur(4px)}
+
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 180ms ease}
+
+.modal-panel{position:relative;background:#fff;padding:1.5rem 1.2rem;border-radius:16px;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;z-index:10001;box-shadow:0 8px 32px rgba(0,0,0,0.15);transform:scale(.95);opacity:0;transition:all 180ms ease;text-align:center}
+@media(min-width:480px){.modal-panel{padding:1.8rem 1.5rem;max-width:450px}}
+
+.modal.show .modal-backdrop{background:rgba(0,0,0,0.5)}
+.modal.show .modal-panel{transform:scale(1);opacity:1}
+
+.modal-close{position:absolute;right:8px;top:8px;border:none;background:#f5f5f5;font-size:20px;cursor:pointer;color:#666;line-height:1;font-weight:400;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all .15s}
+.modal-close:hover{background:#e8e8e8;color:#333}
+
+.modal-panel h3{margin:0 0 0.6rem 0;text-align:center;font-size:1.1rem;font-weight:700;color:#2d3436;line-height:1.3}
+@media(min-width:480px){.modal-panel h3{font-size:1.2rem;margin:0 0 0.8rem 0}}
+
+.modal .qrcode{width:200px;display:block;margin:1rem auto;border-radius:12px;background:#fafafa;padding:1rem;border:1px solid #e5e5e5}
+@media(min-width:480px){.modal .qrcode{width:220px;padding:1.1rem}}
+
+.modal .qrcode svg,.modal .qrcode img,.modal .qrcode canvas{display:block;width:100%;height:auto;margin:0 auto}
+
+.modal .pix-text-wrap{display:flex;gap:0.5rem;margin-top:0.8rem;margin-bottom:1.2rem;width:100%}
+
+.modal input#modal-pix-text{flex:1;padding:0.7rem;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;font-family:monospace;font-size:0.7rem;color:#555;text-align:center}
+@media(min-width:480px){.modal input#modal-pix-text{font-size:0.75rem;padding:0.8rem}}
+
+.modal .status-row{display:flex;align-items:center;gap:0.5rem;margin:0.8rem 0;justify-content:center}
+
+.modal #modal-timer{color:#888;font-weight:500;font-size:0.8rem}
+
+.primary-copy{display:flex;width:100%;align-items:center;justify-content:center;gap:0.5rem;background:#52c522;border:none;color:#fff;padding:1rem;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(82,197,34,0.25);transition:all .2s ease;font-size:1rem;letter-spacing:0.3px;text-transform:uppercase;animation:pulse-soft 2.5s ease-in-out infinite}
+@media(min-width:480px){.primary-copy{padding:1.1rem;font-size:1.05rem}}
+.primary-copy:hover{background:#47b31d;box-shadow:0 6px 16px rgba(82,197,34,0.35);transform:translateY(-2px);animation:none}
+.primary-copy:active{transform:translateY(0)}
+
+@keyframes pulse-soft{0%,100%{box-shadow:0 4px 12px rgba(82,197,34,0.25)}50%{box-shadow:0 4px 16px rgba(82,197,34,0.4)}}
+
+@media(min-width:1024px){.desktop-grid{grid-template-columns:45% 55%!important;gap:3rem!important}}
+
+.fixed-mobile-btn{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(to top,#fff,#fefefe);padding:0.8rem 1rem 1rem;box-shadow:0 -2px 20px rgba(0,0,0,0.1);z-index:999;display:block;border-top:2px solid #52c522}
+@media(min-width:768px){.fixed-mobile-btn{display:none}}
+
+.protection-badge-mobile{display:inline-flex;align-items:center;gap:0.4rem;background:linear-gradient(135deg,#e8f5e9,#f1f8f4);padding:0.4rem 0.8rem;border-radius:8px;font-size:0.7rem;font-weight:700;color:#2e7d32;margin-bottom:0.8rem;border:1px solid #52c522;box-shadow:0 2px 4px rgba(82,197,34,0.15)}
+.protection-badge-mobile svg{width:14px;height:14px;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.1))}
+
+.donate-fixed-btn{display:block;width:100%;padding:1.1rem;background:linear-gradient(135deg,#52c522,#47b31d);color:#fff!important;font-size:1.05rem;font-weight:700;text-align:center;text-decoration:none!important;border-radius:12px;cursor:pointer;box-shadow:0 4px 16px rgba(82,197,34,.3);transition:all .3s;border:none;text-transform:uppercase;letter-spacing:0.8px;position:relative;overflow:hidden;animation:pulse-soft 2.5s ease-in-out infinite}
+.donate-fixed-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:shine 3s infinite}
+@keyframes shine{0%{left:-100%}50%{left:100%}100%{left:100%}}
+.donate-fixed-btn:hover{color:#fff!important;text-decoration:none!important;box-shadow:0 6px 20px rgba(82,197,34,.4);transform:translateY(-2px);animation:none}
+.donate-fixed-btn:active{transform:translateY(0) scale(0.98)}
+
+.share-btn{display:block;width:100%;padding:0.9rem;background:#fff;color:#333;font-size:0.95rem;font-weight:600;text-align:center;text-decoration:none;border-radius:8px;cursor:pointer;border:2px solid #e9ecef;transition:all .2s;margin-top:0.6rem}
+.share-btn:active{background:#f8f9fa}
+
+.modal #modal-status{text-align:center;color:#888;font-size:0.9rem;margin:0.8rem 0;font-weight:600}
+.modal #modal-status.blink{animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.5}}
+  </style>
+  
+<script>
+  window.pixelId = "673d3f35e18a67505d98a602";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script> <!-- Utmify Pixel Script -->
+<script>
+  window.pixelId = "690e6f8d9afe8b39b1a46ac1";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<!-- End Utmify Pixel -->
+
+<!-- Utmify UTMs Script -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<!-- End Utmify UTMs -->
+
+<!-- Facebook (Meta) Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '25285430791053767');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=25285430791053767&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel --> 
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-bar">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/loogo-aWnSIDbT158ZOD8dG9LyFELmB6pg2G.png" alt="Carinho pela Bella" class="brand" width="180" height="45" decoding="async">
+      <h1>O tratamento da Bella não pode parar, e cada gesto faz diferença</h1>
+    </div>
+
+    <div class="media-box">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imgbanner-3DGFcmxY7zps3sm8bXo69bQIf0QkiH.jpg" alt="Bella" class="main-img" fetchpriority="high" width="720" height="450">
+    </div>
+
+    <section class="stats-area">
+      <div style="max-width:580px;margin:0 auto;background:transparent;padding:1.2rem 1rem">
+        
+        <div style="text-align:center;margin-bottom:0.9rem">
+          <div style="display:inline-flex;align-items:center;gap:0.4rem;background:linear-gradient(135deg,#f0fdf4,#dcfce7);padding:0.3rem 0.8rem;border-radius:16px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#52c522">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+            </svg>
+            <span style="font-size:0.75rem;font-weight:600;color:#16a34a">Campanha Ativa</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0.8rem;align-items:center;margin-bottom:1rem">
+          <div style="text-align:left">
+            <div style="font-size:0.7rem;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:0.3rem">Arrecadado</div>
+            <div style="font-size:1.5rem;font-weight:800;color:#52c522;line-height:1">R$ 48.450</div>
+          </div>
+          
+          <div style="width:1px;height:35px;background:linear-gradient(to bottom,transparent,#e0e0e0,transparent)"></div>
+          
+          <div style="text-align:right">
+            <div style="font-size:0.7rem;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:0.3rem">Meta</div>
+            <div style="font-size:1.1rem;font-weight:700;color:#888;line-height:1">R$ 74.600</div>
+          </div>
+        </div>
+        
+        <div style="position:relative;height:12px;background:#f1f5f9;border-radius:20px;overflow:visible;margin-bottom:0.7rem;box-shadow:inset 0 1px 3px rgba(0,0,0,0.08)">
+          <div style="position:absolute;top:0;left:0;bottom:0;width:63%;background:linear-gradient(90deg,#52c522,#4ade80);border-radius:20px;box-shadow:0 2px 6px rgba(82,197,34,0.25);transition:width 1s ease"></div>
+          <div style="position:absolute;top:50%;left:63%;transform:translate(-50%,-50%);background:#fff;padding:0.1rem 0.4rem;border-radius:10px;font-size:0.65rem;font-weight:700;color:#52c522;box-shadow:0 1px 4px rgba(0,0,0,0.12)">63%</div>
+        </div>
+        
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:0.5rem">
+          <div style="display:flex;align-items:center;gap:0.3rem">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#52c522">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+            </svg>
+            <span style="font-size:0.75rem;font-weight:600;color:#52c522">4 dias restantes</span>
+          </div>
+          <div style="font-size:0.75rem;color:#888;font-weight:500">142 doações</div>
+        </div>
+      </div>
+    </section>
+
+    <article class="text-area">
+      <p>Nos últimos meses, a vida da Bella virou uma rotina de curativos, remédios e orações.<br>
+      Ela tem uma condição genética chamada <strong>Epidermólise Bolhosa</strong>, uma doença rara que faz com que a pele se rompa com o menor toque.</p>
+      
+      <p>Um simples abraço pode machucar.<br>
+      O tecido de uma roupa pode abrir feridas.<br>
+      E o que deveria ser infância, virou uma batalha diária.</p>
+      
+      <p>A mãe cuida dela com todo amor, trocando os curativos todos os dias, mesmo sabendo que cada troca dói.<br>
+      O pai tenta ajudar como pode, mas a família vive com recursos limitados e o tratamento exige muito mais do que eles conseguem bancar sozinhos.</p>
+      
+      <div class="img-box">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/banner01-KEE4GB8ODQOkN3Z9xOde28LP0JHrr8.jpg" alt="Bella" class="img-item" loading="lazy" decoding="async" width="720" height="720">
+      </div>
+
+      <p>Nos últimos meses, o quadro da Bella piorou.<br>
+      Ela perdeu peso, ficou mais fraca e os exames mostraram novas complicações — o coração e os pulmões estão comprometidos, e o corpo precisa de atenção constante.</p>
+      
+      <p>Hoje, a Bella está internada.<br>
+      Mesmo assim, ela sorri quando pode e diz que sonha em "poder sair de casa sem se machucar".<br>
+      É um pedido simples, mas que carrega tudo o que essa mãe mais deseja: ver a filha bem.</p>
+    </article>
+
+    <div class="img-box">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img2-ebCfFZpJZoIKiv5fTwcFK0tvq9mMbx.jpg" alt="Bella" class="img-item" loading="lazy" decoding="async" width="720" height="720">
+    </div>
+
+    <article class="text-area">
+      <p>Essa campanha existe pra garantir o que é essencial:<br>
+      os curativos especiais, os medicamentos e os cuidados que ajudam a aliviar a dor da Bella.</p>
+      
+      <p>Se essa história chegou até você, guarde o nome dela no coração.<br>
+      A Bella ainda luta, e o amor continua sendo o que mantém tudo em pé.</p>
+    </article>
+
+    <div style="background:#fff;padding:2.25rem 1rem;border-top:1px solid #dee2e6;border-bottom:1px solid #dee2e6">
+      <div class="desktop-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem">
+        
+        <section id="choice" style="background:transparent;padding:0;border:none">
+          <h2 class="area-title">SELECIONE UM VALOR PARA BELLA:</h2>
+          <div class="option-grid">
+            <button class="option-btn" data-value="30">R$ 30</button>
+            <button class="option-btn" data-value="50">R$ 50</button>
+            <button class="option-btn" data-value="75">R$ 75</button>
+            <button class="option-btn" data-value="100">R$ 100</button>
+            <button class="option-btn" data-value="175">R$ 175</button>
+            <button class="option-btn" data-value="200">R$ 200</button>
+            <button class="option-btn" data-value="300">R$ 300</button>
+            <button class="option-btn" data-value="600">R$ 600</button>
+            <button class="option-btn" data-value="800">R$ 800</button>
+            <button class="option-btn" data-value="1000">R$ 1000</button>
+          </div>
+        </section>
+        
+        <section class="comments-area">
+          <p style="text-align:center;color:#666;font-size:0.9rem;margin-bottom:1.5rem">142 Comentários</p>
+          
+          <div class="fb-comment">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/avatar1-t6EImyECYa6eI1UChqMqGRFO4VhvNd.webp" alt="Fernanda Silva" class="fb-avatar" loading="lazy" decoding="async" width="40" height="40">
+            <div class="fb-body">
+              <div class="fb-name">Fernanda Silva</div>
+              <div class="fb-text">Fiz minha parte. Que a Bella tenha acesso ao tratamento que ela precisa. Força pra família!</div>
+              <div class="fb-actions">
+                <span class="fb-action" onclick="toggleFbLike(this)">Curtir</span>
+                <span class="fb-time">3h</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fb-comment">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/avatar2-iuQoMQIK2VR5tycicS4OJ1K8uRVgam.webp" alt="Bruno Santos" class="fb-avatar" loading="lazy" decoding="async" width="40" height="40">
+            <div class="fb-body">
+              <div class="fb-name">Bruno Santos</div>
+              <div class="fb-text">A história da Bella é muito tocante. Que ela receba todo o apoio necessário. Doei de coração!</div>
+              <div class="fb-actions">
+                <span class="fb-action" onclick="toggleFbLike(this)">Curtir</span>
+                <span class="fb-time">1h</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fb-comment">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/avatar3-KH8vrIdRZVdzh00X6Bogxj5SjP173d.webp" alt="Camila Oliveira" class="fb-avatar" loading="lazy" decoding="async" width="40" height="40">
+            <div class="fb-body">
+              <div class="fb-name">Camila Oliveira</div>
+              <div class="fb-text">Doei com todo carinho. Criança nenhuma merece passar por isso. Que Deus proteja a Bella.</div>
+              <div class="fb-actions">
+                <span class="fb-action" onclick="toggleFbLike(this)">Curtir</span>
+                <span class="fb-time">45 min</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fb-comment">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/avatar4-nmUQsjYZZScdS1zPlPiyNPUY7ypKTS.webp" alt="Rafael Costa" class="fb-avatar" loading="lazy" decoding="async" width="40" height="40">
+            <div class="fb-body">
+              <div class="fb-name">Rafael Costa</div>
+              <div class="fb-text">Contribuí e compartilhei. Essa menina precisa de apoio. Que ela receba todo cuidado necessário.</div>
+              <div class="fb-actions">
+                <span class="fb-action" onclick="toggleFbLike(this)">Curtir</span>
+                <span class="fb-time">2h</span>
+              </div>
+            </div>
+          </div>
+              
+        </section>
+      
+      </div>
+    </div>
+
+    <script>
+    function toggleFbLike(btn) {
+      btn.classList.toggle('active');
+    }
+    </script>
+
+    <div class="bottom-bar">
+      <div style="max-width:500px;margin:0 auto;text-align:center">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/loogo-aWnSIDbT158ZOD8dG9LyFELmB6pg2G.png" alt="Carinho por Bella" loading="lazy" decoding="async" class="bottom-brand">
+        
+        <div class="bottom-nav">
+          <a href="#" class="bottom-link">Privacidade</a>
+          <a href="#" class="bottom-link">Termos</a>
+          <a href="#" class="bottom-link">Contato</a>
+        </div>
+        
+        <div class="bottom-legal">
+          © 2025 Carinho por Bella
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-mobile-btn">
+    <div style="text-align:center">
+      <div class="protection-badge-mobile">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"></path>
+        </svg>
+        DOAÇÃO PROTEGIDA
+      </div>
+    </div>
+    <a href="#choice" class="donate-fixed-btn">
+      AJUDAR BELLA
+    </a>
+  </div>
+
+    <div id="pix-modal" class="modal" aria-hidden="true" style="display:none">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close" aria-label="Fechar">×</button>
+      
+      <h3>Finalize sua contribuição</h3>
+
+      <div style="text-align:center;margin-bottom:0.8rem">
+        <div id="modal-amount" style="font-size:1.8rem;font-weight:800;color:#52c522">R$ 0,00</div>
+      </div>
+
+      <p id="modal-status" class="blink">⏳ Aguardando pagamento</p>
+
+      <div id="modal-qrcode" class="qrcode"></div>
+
+      <div class="pix-text-wrap">
+        <input id="modal-pix-text" readonly="" placeholder="código pix...">
+      </div>
+
+      <button id="modal-btn-copy" class="primary-copy">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path>
+        </svg>
+        <span>Copiar Código PIX</span>
+      </button>
+
+      <div style="text-align:center;margin-top:1rem">
+        <p style="margin:0;font-size:0.85rem;color:#888;line-height:1.4">
+          Cole o código PIX no seu app de pagamento
+        </p>
+      </div>
+      
+      <div class="status-row" style="display:none">
+        <span id="modal-timer"></span>
+      </div>
+
+      <div id="modal-success" style="display:none;margin-top:1rem;padding:1.5rem;background:#e8f5e9;color:#2e7d32;border-radius:10px;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem">✓</div>
+        <div style="font-size:1.1rem;font-weight:700;margin-bottom:0.3rem">Pagamento Confirmado!</div>
+        <p style="margin:0;font-size:0.9rem;color:#2e7d32;opacity:0.9">Valor recebido com sucesso!</p>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="/js/app.js" defer=""></script>
+
+</body>
+</html>
