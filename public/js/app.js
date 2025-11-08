@@ -129,7 +129,9 @@ optionBtns.forEach((btn) => {
       optionBtns.forEach((b) => {
         b.disabled = false
         const val = Number.parseInt(b.dataset.value)
-        b.textContent = `R$ ${val}`
+        // ✅ CORRIGIDO: Mostra valor em reais, não centavos
+        const amount_in_reais = val / 100
+        b.textContent = `R$ ${amount_in_reais}`
       })
     }
   })
@@ -143,7 +145,9 @@ async function generatePix(amount) {
   const utmParams = getUtmParameters()
   console.log("[Bella] 📊 UTM params being sent:", utmParams)
 
-  modalAmount.textContent = `R$ ${amount},00`
+  // ✅ CORRIGIDO: Converte centavos para reais no display
+  const amount_in_reais = amount / 100
+  modalAmount.textContent = `R$ ${amount_in_reais.toFixed(2).replace('.', ',')}`
   openModal()
 
   try {
@@ -151,7 +155,7 @@ async function generatePix(amount) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        amount_cents: amount * 100, // Converter para centavos
+        amount_cents: amount, // ✅ CORRETO - envia em centavos
         utm_params: utmParams,
         metadata: "BELLA", // 🔥 Identificador único para Bella
       }),
@@ -173,7 +177,7 @@ async function generatePix(amount) {
 
     // ✅ Gera QR Code usando a biblioteca QRCode
     modalQrcode.innerHTML = ""
-    const QRCode = window.QRCode // Declare the QRCode variable
+    const QRCode = window.QRCode
     const qrcode = new QRCode(modalQrcode, {
       text: data.qrcode_text,
       width: 200,
@@ -215,7 +219,9 @@ function startSSE(transactionId) {
         console.log("[Bella] ✅ Payment confirmed!")
 
         try {
-          const amount = Number.parseInt(modalAmount.textContent.replace(/[^\d]/g, "")) || 0
+          // ✅ CORRIGIDO: Pega o valor em reais do modal
+          const amountText = modalAmount.textContent.replace('R$ ', '').replace(',', '.')
+          const amount = parseFloat(amountText) || 0
 
           if (typeof window.utmify === "function") {
             window.utmify("event", "Purchase", {
