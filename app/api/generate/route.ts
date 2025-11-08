@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-const SUNIZE_API_KEY = process.env.SUNIZE_API_KEY!
-const SUNIZE_API_SECRET = process.env.SUNIZE_API_SECRET!
+const SUNIZE_API_KEY = process.env.SUNIZE_API_KEY
+const SUNIZE_API_SECRET = process.env.SUNIZE_API_SECRET
 const SUNIZE_API_URL = process.env.SUNIZE_API_URL || "https://api.sunize.com.br/v1"
 
 export async function POST(request: NextRequest) {
@@ -12,33 +12,33 @@ export async function POST(request: NextRequest) {
     console.log("[v0] Generating PIX transaction:", { amount_cents, metadata })
 
     // ✅ CONVERTER PARA REAIS (Sunize espera reais)
-const amount = amount_cents / 100;  // Converte centavos pra reais
+    const amount = amount_cents / 100
 
-const payload = {
-  external_id: `BELLA_${Date.now()}`,
-  total_amount: amount,  // Agora em reais, ex: 30
-  payment_method: "PIX",
-  items: [
-    {
-      id: `item_${Date.now()}`,
-      title: `Doação de R$${amount.toFixed(2)} para ${metadata || "Bella"}`,  // Adicionei o valor no title pra depurar
-      description: "Contribuição para ajudar a Bella",
-      price: amount,  // Em reais
-      quantity: 1,
-      is_physical: false,
-    },
-  ],
-  ip: request.headers.get("x-forwarded-for")?.split(',')[0]?.trim() || 
-    request.headers.get("x-real-ip") || 
-    "177.220.21.146", // IP de fallback válido
-  customer: {
-    name: "Doador Anônimo",
-    email: "anon@example.com",
-    phone: "+5511999999999",  // Formato E.164, com +55
-    document_type: "CPF",
-    document: "44458832042",  // Use um CPF válido pra teste, tipo gerador online
-  },
-};
+    const payload = {
+      external_id: `BELLA_${Date.now()}`,
+      total_amount: amount, // EM REAIS
+      payment_method: "PIX",
+      items: [
+        {
+          id: `item_${Date.now()}`,
+          title: `Doação de R$${amount.toFixed(2)} para ${metadata || "Bella"}`,
+          description: "Contribuição para ajudar a Bella",
+          price: amount, // EM REAIS
+          quantity: 1,
+          is_physical: false,
+        },
+      ],
+      ip: request.headers.get("x-forwarded-for")?.split(',')[0]?.trim() || 
+          request.headers.get("x-real-ip") || 
+          "177.220.21.146",
+      customer: {
+        name: "Doador Anônimo",
+        email: "anon@example.com",
+        phone: "+5511999999999",
+        document_type: "CPF",
+        document: "44458832042",
+      },
+    }
 
     console.log("[v0] Sending payload to Sunize:", JSON.stringify(payload, null, 2))
 
