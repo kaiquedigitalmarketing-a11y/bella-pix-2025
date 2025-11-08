@@ -11,21 +11,21 @@ export async function POST(request: NextRequest) {
 
     console.log("[v0] Generating PIX transaction:", { amount_cents, metadata });
 
-    // ✅ Converte centavos pra reais
+    // ✅ Converte centavos pra reais (apenas para display)
     const amount = amount_cents / 100;
 
     console.log("[v0] Amount in reais:", amount);
 
     const payload = {
-      external_id: `BELLA_${Date.now()}_${Math.random().toString(36).slice(2)}`, // Mais único pra evitar duplicados
-      total_amount: amount, // em reais
+      external_id: `BELLA_${Date.now()}_${Math.random().toString(36).slice(2)}`,
+      total_amount: amount_cents, // ✅ CORRETO: em CENTAVOS
       payment_method: "PIX",
       items: [
         {
           id: `item_${Date.now()}`,
           title: `Doação de R$${amount.toFixed(2)} para ${metadata || "Bella"}`,
           description: "Contribuição para ajudar a Bella",
-          price: amount, // em reais
+          price: amount_cents, // ✅ CORRETO: em CENTAVOS
           quantity: 1,
           is_physical: false,
         },
@@ -34,12 +34,10 @@ export async function POST(request: NextRequest) {
       customer: {
         name: "Doador Anônimo",
         email: "anon@example.com",
-        phone: "+5511912345678", // Exemplo válido; mude pro teu se quiser
+        phone: "+5511912345678",
         document_type: "CPF",
-        document: "12345678909", // CPF fake válido pra teste (gere um novo em site de gerador CPF)
+        document: "12345678909",
       },
-      // Opcional: Se quiser webhook pra notificar pagamento
-      // notification_url: "https://seu-site.com/webhook",
     };
 
     console.log("[v0] Sending payload to Sunize:", JSON.stringify(payload, null, 2));

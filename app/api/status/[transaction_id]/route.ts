@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server"
 
-const SUNIZE_API_KEY = "ck_9c099bc368ef5a7a912828239b8ce9d8"
-const SUNIZE_API_SECRET = "cs_4ebfed9e4e41f92270f936e5eb80ab95"
+const SUNIZE_API_KEY = process.env.SUNIZE_API_KEY
+const SUNIZE_API_SECRET = process.env.SUNIZE_API_SECRET
 const SUNIZE_API_URL = "https://api.sunize.com.br/v1"
 
 export async function GET(request: NextRequest, { params }: { params: { transaction_id: string } }) {
